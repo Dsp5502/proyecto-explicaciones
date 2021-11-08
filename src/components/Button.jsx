@@ -1,7 +1,11 @@
 import React from "react";
 
-const Button = () => {
-  return <button className='button'>Este es mi boton 1</button>;
+const Button = ({ texto = " culaquier cosa", color = "coral " }) => {
+  return (
+    <button style={{ backgroundColor: color }} className='button'>
+      {texto}
+    </button>
+  );
 };
 
 export default Button;

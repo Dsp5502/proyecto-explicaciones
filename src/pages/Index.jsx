@@ -37,6 +37,9 @@ const Index = () => {
       />
       <span>La suma de los valores 1 y 2 es: {suma} </span>
       <Button />
+      <Button texto='boton1' color='red' />
+      <Button texto='boton2' color='yellow' />
+      <Button texto='boton3' color='blue' />
     </div>
   );
 };
