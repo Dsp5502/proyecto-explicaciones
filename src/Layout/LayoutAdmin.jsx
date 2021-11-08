@@ -2,13 +2,15 @@ import React from "react";
 import { Outlet } from "react-router";
 import Sidebar from "../components/sidebar";
 
-const Layout = () => {
+const LayoutAdmin = ({ children }) => {
   return (
     <div>
+      <nav>Este es el Navbar</nav>
       <Sidebar />
       <Outlet />
+      <footer>este es el footer</footer>
     </div>
   );
 };
 
-export default Layout;
+export default LayoutAdmin;

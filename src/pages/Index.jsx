@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
-import Button from "../components/Button";
+import { useUser } from "../context/user";
+import { Link } from "react-router-dom";
+import { useDark } from "../context/Dark";
 
 const Index = () => {
+  const { userData, setUserData } = useUser();
+  const { dark } = useDark();
   const [valor1, setvalor1] = useState(0);
   const [valor2, setvalor2] = useState(0);
   const [suma, setSuma] = useState(0);
 
   useEffect(() => {
     console.log("este es un useeffect se ejecuta una sola vez ");
-  }, []);
+    console.log("info del usuario", userData);
+  }, [userData]);
 
   useEffect(() => {
     console.log(
@@ -22,7 +27,7 @@ const Index = () => {
   }, [valor1, valor2]);
 
   return (
-    <div>
+    <div className={` container ${dark ? "fondo-Oscuro" : "fondo-Claro"}`}>
       <input
         value={valor1}
         onChange={(e) => setvalor1(parseInt(e.target.value))}
@@ -36,10 +41,11 @@ const Index = () => {
         type='number'
       />
       <span>La suma de los valores 1 y 2 es: {suma} </span>
-      <Button />
-      <Button texto='boton1' color='red' />
-      <Button texto='boton2' color='yellow' />
-      <Button texto='boton3' color='blue' />
+      <button onClick={() => setUserData({ ...userData, suma: suma })}>
+        Guardar Suma
+      </button>
+      <Link to='/admin/usuarios/david'>ir a la pagina del usuario</Link>
+      <Link to='/configuracion'>ir a la pagina de config</Link>
     </div>
   );
 };

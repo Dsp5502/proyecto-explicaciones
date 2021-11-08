@@ -4,3 +4,19 @@
   padding: 3px;
   border: 1px solid gray;
 }
+
+.fondo-Oscuro {
+  background-color: rgb(27, 27, 27);
+  color: white;
+}
+
+.fondo-Claro {
+  background-color: rgb(179, 179, 179);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 30px;
+}
