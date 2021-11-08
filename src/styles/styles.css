@@ -1,0 +1,6 @@
+.button {
+  background-color: coral;
+  cursor: pointer;
+  padding: 3px;
+  border: 1px solid gray;
+}
